@@ -44,3 +44,7 @@ You may want to see all the debug logs, then use
 ```bash
 expressions --debug true
 ```
+You can use these expressions to test the program:
+- `1+(2+3)*4^2`
+- `(((3.2 + (4.1 * (2.3 - 1.2))) / (6.5 - (2.2 ^ 3))) + 5.7)`
+- `(((8.4 / (3.1 + (2.7 - 1.5))) ^ 2) - ((6.3 * (4.9 / 2.1)) + 3.6))`
