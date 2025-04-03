@@ -1,0 +1,23 @@
+id: id.perret.expressions
+runtime: org.gnome.Platform
+runtime-version: '48'
+sdk: org.gnome.Sdk
+command: expressions
+modules:
+  - name: gtkmm-4.0
+    buildsystem: meson
+    build-options:
+      build-args:
+        - --share=network  
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/gtkmm/4.8/gtkmm-4.8.0.tar.xz
+        sha256: c82786d46e2b07346b6397ca7f1929d952f4922fa5c9db3dee08498b9a136cf5  
+
+  - name: expressions
+    buildsystem: meson
+    builddir: true  
+    sources:
+      - type: dir
+        path: .
+

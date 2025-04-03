@@ -1,0 +1,1 @@
+libArgParser = static_library('argParser',['ArgumentParser.hpp','ArgumentParser.cpp'])

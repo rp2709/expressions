@@ -1,0 +1,12 @@
+[default]
+name=Default
+runtime=host
+toolchain=default
+config-opts=
+run-opts=
+prefix=/home/raphael/.cache/gnome-builder/install/Expressions/host
+app-id=
+postbuild=
+prebuild=
+run-command=
+default=true
