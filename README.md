@@ -11,7 +11,7 @@ It is only a small coding challenge and should only be viewed as such.
 You will have to clone this repository and build from source.
 
 ```bash
-git clone url
+git clone https://github.com/rp2709/expressions.git
 ```
 
 In the newly created directory use the build and install script provided. As you should NEVER run a random script without first checking it, here it is in it's entierty:
