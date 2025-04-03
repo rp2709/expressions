@@ -32,12 +32,14 @@ Expression::Expression(std::istream &expression) {
     std::unique_ptr<BinaryTree::Node>* nextNode = &root;
     std::unique_ptr<BinaryTree::Node>* protectedOperator = &root;
     while (not expression.eof()) {
+        bool parenthesis = false;
         Node *newNode;
         expression >> ctmp;
         if (ctmp == '(') {
             // This constructor is recursive since it creates a new expression with the content of the parenthesis
             newNode = transferRootOf(Expression(expression));
             protectedOperator = nextNode;
+            parenthesis = true;
         } else {
             expression.putback(ctmp);
             if (!(expression >> temp))
@@ -59,7 +61,7 @@ Expression::Expression(std::istream &expression) {
         while (
             not(*nextNode)->isLeaf()
             and op->hasGreaterPriorityThan( *(static_cast<Expression::Node*>(nextNode->get())->operand))
-            and nextNode != protectedOperator
+            and (not parenthesis or nextNode != protectedOperator)
         )
         {
             nextNode = &(*nextNode)->right;
